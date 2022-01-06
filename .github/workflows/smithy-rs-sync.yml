@@ -30,6 +30,7 @@ jobs:
         repository: awslabs/smithy-rs
         ref: ${{ env.sync_from_branch }}
         path: smithy-rs
+        fetch-depth: 0
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
@@ -38,9 +39,6 @@ jobs:
     - uses: actions/setup-java@v1
       with:
         java-version: ${{ env.java_version }}
-    - name: fetch smithy-rs
-      working-directory: smithy-rs
-      run: git fetch --no-tags --progress --no-recurse-submodules --depth=1 origin ${{ env.sync_from_branch }}
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
@@ -48,7 +46,7 @@ jobs:
           --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
           --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust \
           --branch ${{ env.sync_to_branch }} \
-          --max-commits-to-sync 1
+          --max-commits-to-sync 5
     - name: push commits
       working-directory: aws-sdk-rust
       run: |
