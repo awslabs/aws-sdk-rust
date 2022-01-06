@@ -33,3 +33,4 @@ jobs:
           --ignore RUSTSEC-2020-0159 \
           # serde_cbor is being imported by criterion, a benchmarking crate. More info here https://github.com/awslabs/smithy-rs/issues/1044
           --ignore RUSTSEC-2021-0127
+
